@@ -1,5 +1,6 @@
+＃コーディング：utf-8
 fees = []
-tmp= input().split()
+tmp = 入力（）。分割（）
 N = int(tmp[0])
 X = int(tmp[1])
 for _ in range(N):
