@@ -1,14 +1,6 @@
 ＃コーディング：utf-8
-fees = []
-tmp = 入力（）。分割（）
-N = int(tmp[0])
-X = int(tmp[1])
-for _ in range(N):
-    tmpn = input().split()
-    hatsu_kyori = int(tmpn[0])
-    hatsu_un = int(tmpn[1])
-    kasan_kyori = int(tmpn[2])
-    kasan_un = int(tmpn[3])
+def get_high_and_low(X,hatsu_kyori,hatsu_un,kasan_kyori,kasan_un):
+    fees = []
     if X <  hatsu_kyori:
         result = hatsu_un
         fees.append(result)
@@ -16,4 +8,16 @@ for _ in range(N):
         portion = (X-hatsu_kyori)/kasan_kyori
         result = hatsu_un + int(portion +1)*kasan_un
         fees.append(result)
-print(min(fees),max(fees))
+    return(min(fees),max(fees))
+
+n = input('how many')
+
+
+for _ in range(int(n)):
+    X = input('how long')
+    hk = input('first_distance')
+    hu = input('first_fee')
+    kk = input('add_distance')
+    ku = input('add_fee')
+    r = get_high_and_low(int(X),int(hk),int(hu),int(kk),int(ku))
+print(r)
